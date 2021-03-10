@@ -4,6 +4,7 @@
       <div class="relative flex items-center justify-between h-16">
         <div class="sm:hidden absolute inset-y-0 right-0 flex items-center">
           <button
+            @click="hamburgerDisplay = !hamburgerDisplay"
             type="button"
             class="inline-flex items-center justify-center p-2 pr-2 text-black rounded-md"
             aria-controls="mobile-menu"
@@ -44,8 +45,9 @@
             </svg>
           </button>
         </div>
+        <!-- regular menu -->
         <div class="sm:items-stretch sm:justify-around flex flex-1 pl-2">
-          <div class="flex items-center flex-shrink-0">
+          <div class="flex items-center flex-shrink-0 font-bold">
             <svg
               class="block w-auto h-8"
               xmlns="http://www.w3.org/2000/svg"
@@ -58,6 +60,7 @@
                 clip-rule="evenodd"
               />
             </svg>
+            &nbsp; LOGOTEXT
           </div>
           <!-- no hamburger -->
           <div class="sm:block sm:ml-6 hidden">
@@ -95,7 +98,11 @@
     </div>
 
     <!-- hamburger -->
-    <div class="sm:hidden pb-5" id="mobile-menu">
+    <div
+      class="pb-5 transition duration-300 ease-in"
+      :class="{ hidden: !hamburgerDisplay }"
+      id="mobile-menu"
+    >
       <div class="px-2 pt-2 pb-3 space-y-2">
         <a
           href="#"
@@ -129,7 +136,11 @@
 <script>
 export default {
   name: 'base-header',
-
+  data() {
+    return {
+      hamburgerDisplay: false,
+    }
+  },
   computed: {
     activePage() {
       return this.$route.name
