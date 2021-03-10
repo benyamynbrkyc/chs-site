@@ -1,5 +1,6 @@
 <template>
   <main class="shadow-3xl p-6 bg-white shadow-inner">
+    <!-- main footer -->
     <div class="container">
       <div
         class="md:max-w-full md:flex container flex-row justify-around w-full max-w-sm"
@@ -17,7 +18,7 @@
         >
           <div class="flex-col mb-8 space-y-3">
             <div class="mb-10 text-2xl font-bold text-gray-900">
-              Kontaktirajte nas!
+              Contact us!
             </div>
             <!-- email -->
             <NuxtLink
@@ -47,7 +48,7 @@
               />
               <div>
                 <p class="md:text-md text-base text-gray-900">
-                  email@email.com
+                  +387 12 345 6789
                 </p>
               </div>
             </NuxtLink>
@@ -58,7 +59,7 @@
             >
               <img
                 class="w-10 h-10 my-4 mr-10 rounded-full"
-                src="/images/email.webp"
+                src="/images/location.webp"
                 alt="Avatar of Jonathan Reinink"
               />
               <div>
@@ -70,7 +71,18 @@
           </div>
         </div>
       </div>
+      <div class="text-center">
+        <p>
+          {{ new Date().getFullYear() }} | Development by
+          <span class="text-red-500"
+            ><a target="_blank" href="https://www.instagram.com/benyamynbrkyc/"
+              >@benyamynbrkyc</a
+            ></span
+          >
+        </p>
+      </div>
     </div>
+    <!-- dev by -->
   </main>
 </template>
 
