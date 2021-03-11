@@ -4,7 +4,7 @@
       <div
         class="md:flex-row md:justify-center md:space-x-20 container flex flex-col-reverse"
       >
-        <div class="featured-text w-64">
+        <div class="featured-text md:mx-0 w-64 mx-auto">
           <p class="featured-small-title font-bold text-gray-800 uppercase">
             {{ smallTitle }}
           </p>
@@ -12,7 +12,7 @@
           <p class="block mb-6">
             {{ desc }}
           </p>
-          <NuxtLink
+          <nuxt-link
             :to="buttonLink"
             class="hover:border-2 hover:border-black items-center inline-block px-8 py-4 text-xl bg-white border-2 border-white border-dashed rounded-md shadow-lg cursor-pointer"
           >
@@ -21,9 +21,9 @@
                 {{ buttonText }}
               </p>
             </div>
-          </NuxtLink>
+          </nuxt-link>
         </div>
-        <img class="featured-img flex" :src="imgUrl" />
+        <img class="md:mx-0 featured-img flex mx-auto" :src="imgUrl" />
       </div>
     </div>
   </div>
@@ -65,6 +65,20 @@ export default {
 .featured-img {
   max-height: 400px;
   max-width: 400px;
+}
+@media only screen and (max-width: 768px) {
+  .featured-img {
+    max-height: 300px;
+    max-width: 300px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .featured-img {
+    max-height: 400px;
+    max-width: 400px;
+    margin: 0;
+  }
 }
 .featured-text {
   width: 100%;

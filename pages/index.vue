@@ -11,7 +11,7 @@
     </div>
 
     <section class="flex-col mt-24 mb-24 space-y-32">
-      <section-services></section-services>
+      <section-services class=""></section-services>
     </section>
 
     <div class="flex flex-col w-full mt-24">

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col w-full mt-24">
     <main
-      class="md:flex-row md:justify-center md:space-x-10 container flex flex-col"
+      class="md:flex-row md:justify-center md:space-x-10 md:space-y-0 container flex flex-col space-y-8"
     >
       <service-card
         id="a"

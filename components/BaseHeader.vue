@@ -4,11 +4,11 @@
       <div class="relative flex items-center justify-between h-16">
         <div class="sm:hidden absolute inset-y-0 right-0 flex items-center">
           <button
-            @click="hamburgerDisplay = !hamburgerDisplay"
             type="button"
             class="inline-flex items-center justify-center p-2 pr-2 text-black rounded-md"
             aria-controls="mobile-menu"
             aria-expanded="false"
+            @click="hamburgerDisplay = !hamburgerDisplay"
           >
             <span class="sr-only">Open main menu</span>
 
@@ -65,31 +65,29 @@
           <!-- no hamburger -->
           <div class="sm:block sm:ml-6 hidden">
             <div class="flex space-x-4">
-              <NuxtLink
+              <nuxt-link
                 to="/"
                 class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
                 :class="{
                   'active-page': activePage === 'index' ? true : false,
                 }"
-                >Dashboard</NuxtLink
+                >Home</nuxt-link
               >
-              <NuxtLink
-                to="/test"
-                class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded rounded-md"
-                :class="{ 'active-page': activePage === 'test' ? true : false }"
-                >Test</NuxtLink
+              <nuxt-link
+                to="/product"
+                class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
+                :class="{
+                  'active-page': activePage === 'product' ? true : false,
+                }"
+                >Product</nuxt-link
               >
-              <NuxtLink
-                to="#"
-                class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded rounded-md"
-                :class="{ 'active-page': false }"
-                >Projects</NuxtLink
-              >
-              <NuxtLink
-                to="#"
-                class="hover:border-2 hover:border-black hover:border-opacity-100 px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded rounded-md"
-                :class="{ 'active-page': false }"
-                >Calendar</NuxtLink
+              <nuxt-link
+                to="/contact"
+                class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
+                :class="{
+                  'active-page': activePage === 'contact' ? true : false,
+                }"
+                >Contact</nuxt-link
               >
             </div>
           </div>
@@ -98,44 +96,47 @@
     </div>
 
     <!-- hamburger -->
-    <div
-      class="pb-5 transition duration-300 ease-in"
-      :class="{ hidden: !hamburgerDisplay }"
-      id="mobile-menu"
-    >
-      <div class="px-2 pt-2 pb-3 space-y-2">
-        <a
-          href="#"
-          class="hover:border-2 hover:border-black block px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
-          :class="{ 'active-page': activePage === 'index' ? true : false }"
-          >Dashboard</a
-        >
-        <a
-          href="#"
-          class="hover:border-2 hover:border-black block px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
-          :class="{ 'active-page': activePage === 'test' ? true : false }"
-          >Test</a
-        >
-        <a
-          href="#"
-          class="hover:border-2 hover:border-black block px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
-          :class="{ 'active-page': false }"
-          >Projects</a
-        >
-        <a
-          href="#"
-          class="hover:border-2 hover:border-black block px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
-          :class="{ 'active-page': activePage === 'calendar' ? true : false }"
-          >Calendar</a
-        >
+    <transition name="slide-fade">
+      <div
+        id="mobile-menu"
+        class="pb-5 transition duration-300 ease-in"
+        v-if="hamburgerDisplay"
+      >
+        <!-- :class="{ hidden: !hamburgerDisplay }" -->
+        <div class="flex flex-col px-2 pt-2 pb-3 space-y-2 text-right">
+          <nuxt-link
+            to="/"
+            class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
+            :class="{
+              'active-page': activePage === 'index' ? true : false,
+            }"
+            >Home</nuxt-link
+          >
+          <nuxt-link
+            to="/product"
+            class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
+            :class="{
+              'active-page': activePage === 'product' ? true : false,
+            }"
+            >Product</nuxt-link
+          >
+          <nuxt-link
+            to="/contact"
+            class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
+            :class="{
+              'active-page': activePage === 'contact' ? true : false,
+            }"
+            >Contact</nuxt-link
+          >
+        </div>
       </div>
-    </div>
+    </transition>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'base-header',
+  name: 'BaseHeader',
   data() {
     return {
       hamburgerDisplay: false,
@@ -149,4 +150,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+</style>
