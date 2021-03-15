@@ -98,12 +98,15 @@
     <!-- hamburger -->
     <transition name="slide-fade">
       <div
+        v-if="hamburgerDisplay"
         id="mobile-menu"
         class="pb-5 transition duration-300 ease-in"
-        v-if="hamburgerDisplay"
       >
         <!-- :class="{ hidden: !hamburgerDisplay }" -->
-        <div class="flex flex-col px-2 pt-2 pb-3 space-y-2 text-right">
+        <div
+          class="flex flex-col px-2 pt-2 pb-3 space-y-2 text-right"
+          @click="turnOffHamburger()"
+        >
           <nuxt-link
             to="/"
             class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
@@ -145,6 +148,11 @@ export default {
   computed: {
     activePage() {
       return this.$route.name
+    },
+  },
+  methods: {
+    turnOffHamburger() {
+      this.hamburgerDisplay = false
     },
   },
 }

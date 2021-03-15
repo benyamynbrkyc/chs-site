@@ -1,7 +1,16 @@
-<template><p>contact page</p></template>
+<template>
+  <section-contact></section-contact>
+</template>
 
 <script>
-export default {}
+import SectionContact from '@/components/sections/SectionContact.vue'
+
+export default {
+  name: 'ContactPage',
+  components: {
+    SectionContact,
+  },
+}
 </script>
 
 <style></style>

@@ -2,18 +2,28 @@
   <div class="flex flex-col h-screen">
     <base-header></base-header>
     <Nuxt class="py-6" />
-    <base-footer class="flex mt-auto align-bottom"></base-footer>
+    <base-footer
+      v-if="['index', 'product'].includes($route.name)"
+      class="flex mt-auto align-bottom"
+    ></base-footer>
+    <simple-footer
+      v-if="!['index', 'product'].includes($route.name)"
+      class="mt-10"
+    >
+    </simple-footer>
   </div>
 </template>
 
 <script>
 import BaseHeader from '@/components/BaseHeader.vue'
 import BaseFooter from '@/components/BaseFooter.vue'
+import SimpleFooter from '@/components/SimpleFooter.vue'
 
 export default {
   components: {
     BaseHeader,
     BaseFooter,
+    SimpleFooter,
   },
 }
 </script>
