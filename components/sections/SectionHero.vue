@@ -19,7 +19,7 @@
           <p
             class="md:text-md inline-block text-base font-bold text-gray-900 uppercase"
           >
-            Contact Us
+            Contact us
           </p>
         </nuxt-link>
       </div>

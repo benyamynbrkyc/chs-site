@@ -42,4 +42,10 @@ body {
 .shippori {
   font-family: 'Shippori Mincho B1', serif;
 }
+@media only screen and (min-width: 768px) {
+  #a {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 </style>

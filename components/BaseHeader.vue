@@ -1,3 +1,4 @@
+r
 <template>
   <nav class="bg-white shadow-md">
     <div class="max-w-7xl sm:px-6 lg:px-8 px-2 mx-auto">
@@ -83,7 +84,7 @@
               >
               <nuxt-link
                 to="/contact"
-                class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out border-2 border-white border-dashed rounded"
+                class="hover:border-2 hover:border-black px-3 py-2 text-sm font-bold text-black transition duration-100 ease-in-out bg-yellow-300 border-2 border-yellow-300 border-dashed rounded"
                 :class="{
                   'active-page': activePage === 'contact' ? true : false,
                 }"
@@ -104,7 +105,7 @@
       >
         <!-- :class="{ hidden: !hamburgerDisplay }" -->
         <div
-          class="flex flex-col px-2 pt-2 pb-3 space-y-2 text-right"
+          class="md:hidden flex flex-col px-2 pt-2 pb-3 space-y-2 text-right"
           @click="turnOffHamburger()"
         >
           <nuxt-link

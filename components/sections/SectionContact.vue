@@ -6,12 +6,12 @@
       <!-- 1st -->
       <div class="flex flex-col w-full">
         <h1
-          class="shippori md:pt-10 md:text-5xl lg:text-6xl md:mb-12 lg:text-left mt-6 text-5xl text-center"
+          class="shippori md:pt-10 md:text-5xl lg:text-6xl md:mb-8 lg:text-left mt-6 text-5xl text-center"
         >
           Contact us!
         </h1>
         <p
-          class="lg:mb-8 lg:text-left block max-w-xs mx-auto mt-2 mb-24 text-xl text-center"
+          class="md:pt-0 md:text-2xl lg:text-2xl md:mb-12 lg:text-left mt-4 mb-12 text-2xl text-center"
         >
           Feel free to ask us anything.
         </p>
@@ -127,12 +127,17 @@ export default {
 </script>
 <style lang="scss" scoped>
 .contact-home-button {
-  margin: auto;
   margin-bottom: 10px;
   margin-top: 10px;
   text-align: center;
   width: 100%;
   max-width: 300px;
+}
+@media only screen and (max-width: 1024px) {
+  .contact-home-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .hero-image {
   display: block;
