@@ -51,7 +51,7 @@ export default {
     },
     buttonText: {
       type: String,
-      default: 'buttonText',
+      default: 'Saznajte Više',
     },
     imgUrl: {
       type: String,

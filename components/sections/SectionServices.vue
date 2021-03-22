@@ -6,29 +6,35 @@
       <service-card
         id="a"
         class="mx-auto"
-        title="Service 1"
-        img-url="/images/services/settings.png"
+        title1="Mobilne Aplikacije"
+        title2="Web Aplikacije"
+        title3="Desktop Aplikacije"
+        img-url="/images/services/multiple-layers.svg"
       ></service-card>
       <div class="md:w-70 md:block hidden"></div>
       <service-card
         id="a"
         class="mx-auto"
-        title="Service 2"
-        img-url="/images/services/telemarketer.png"
+        title1="Vodeći Računovodstveni Softver"
+        title2="Baze Podataka"
+        title3="All-In-One Sistem"
+        img-url="/images/services/cog.svg"
       ></service-card>
       <div class="md:w-70 md:block hidden"></div>
       <service-card
         id="a"
         class="mx-auto"
-        title="Service 1"
-        img-url="/images/services/web-development.png"
+        title1="Izrada aplikacija i programa"
+        title2="po želji, na platformama"
+        title3="Vašeg odabira"
+        img-url="/images/services/custom.svg"
       ></service-card>
     </main>
   </div>
 </template>
 
 <script>
-import ServiceCard from '@/components/cards/SimpleCard.vue'
+import ServiceCard from '@/components/cards/ServiceCard.vue'
 export default {
   name: 'SectionServices',
   components: {

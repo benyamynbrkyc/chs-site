@@ -2,7 +2,10 @@
   <div
     class="md:w-full max-width-300 rounded-3xl p-8 overflow-hidden text-center bg-white border-t-4 border-yellow-300 border-dashed shadow-lg"
   >
-    <h1 class="pb-6 text-xl rounded-lg">{{ title }}</h1>
+    <h1 class="text-xl font-bold rounded-lg">{{ title1 }}</h1>
+    <h1 class="text-xl font-bold rounded-lg">{{ title2 }}</h1>
+    <h1 class="text-xl font-bold rounded-lg">{{ title3 }}</h1>
+
     <div
       class="rounded-xl md:flex-row md:justify-around flex flex-col items-center w-full h-auto"
     >
@@ -18,7 +21,15 @@
 export default {
   name: 'SimpleCard',
   props: {
-    title: {
+    title1: {
+      type: String,
+      default: 'service',
+    },
+    title2: {
+      type: String,
+      default: 'service',
+    },
+    title3: {
       type: String,
       default: 'service',
     },
